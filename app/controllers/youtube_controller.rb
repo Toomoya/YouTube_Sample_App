@@ -2,7 +2,7 @@ class YoutubeController < ApplicationController
 
   def index
     @youtube = Youtube.new
-    @youtubes = Youtube.all
+    @youtubes = Youtube.all.order(id: "DESC").page(params[:page]).per(10)
   end
 
   def create

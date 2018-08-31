@@ -1,10 +1,10 @@
-<h1>YouTube Sample</h1>
+<h1 class="hit-the-floor">YouTube Sample</h1>
 <div class="container">
   <div class="row">
-    <div class="col-sm-1">
+    <div class="col-lg-1">
     </div>
-    <div class="col-sm-10">
-      <div class="card border-success">
+    <div class="col-lg-10 col-xs-12">
+      <div class="card border-info text-white bg-dark">
         <h1 class="card-title center">
            <%= @song %>/<%= @artist %>
         </h1>
@@ -15,7 +15,7 @@
         <%= link_to "ホームに戻る", youtube_index_path , :class => "btn btn-primary"%>
       </div>
     </div>
-    <div class="col-sm-1">
+    <div class="col-lg-1">
     </div>
   </div>
 </div>
