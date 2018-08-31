@@ -20,7 +20,7 @@ class YoutubeController < ApplicationController
     @artist = @youtube.artist
     @song = @youtube.song
     # URIを解析し、hostやportをバラバラに取得できるようにする
-    uri = Addressable::URI.parse("https://www.googleapis.com/youtube/v3/search?key="+ENV['YOUTUBE_API_KEY']+"&q="+@artist+@song+"&part=id,snippet")
+    uri = Addressable::URI.parse("https://www.googleapis.com/youtube/v3/search?key="+ENV['YOUTUBE_API_KEY']+"&q="+@artist.gsub(" ", "")+@song.gsub(" ", "")+"&part=id,snippet")
     # リクエストパラメタを、インスタンス変数に格納
     @query = uri.query
     http = Net::HTTP.new(uri.host, uri.inferred_port)

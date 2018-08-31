@@ -11,6 +11,7 @@
         <div id="player"></div>
         <br>
         ※うまく表示されない場合はリロードしてください
+        <a class="twitter-share-button" href="https://twitter.com/share" data-dnt="true">Tweet</a><br>
         <%= link_to "ホームに戻る", youtube_index_path , :class => "btn btn-primary"%>
       </div>
     </div>
@@ -20,6 +21,7 @@
 </div>
 
   <script type="text/javascript">
+
     //IFrame Player API用のJavaScriptを呼び込んで、ページの<script>タグとして埋め込みます
     var tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
@@ -43,4 +45,5 @@
     function onPlayerReady(event) {
       event.target.playVideo();
     }
+    window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
   </script>
